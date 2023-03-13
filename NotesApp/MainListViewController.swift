@@ -9,11 +9,18 @@ import UIKit
 
 class MainListViewController: UITableViewController {
 
-    let itemArray = ["Buy Eggs", "Buy Milk", "Buy Corn"]
+    var itemArray = ["Buy Eggs", "Buy Milk", "Buy Corn"]
+    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Load pList
+        if let items = defaults.array(forKey: "mainListArray") as? [String]{
+            itemArray = items
+        }
     }
 
     //MARK:- TableView Data Source Methods
@@ -28,6 +35,10 @@ class MainListViewController: UITableViewController {
         let mainCell = tableView.dequeueReusableCell(withIdentifier: "mainListCell", for: indexPath)
         
         mainCell.textLabel?.text = itemArray[indexPath.row]
+        
+        //Save Array to plist (Local Storage)
+        self.defaults.set(self.itemArray,forKey: "mainListArray")
+        
         return mainCell
     }
     
@@ -44,8 +55,26 @@ class MainListViewController: UITableViewController {
         } else{
             cell.accessoryType = .checkmark
         }
+    }
+    
+    //MARK: - Add Items
+
+    @IBAction func addItemToMainList(_ sender: Any) {
+        var textfield = UITextField()
         
+        let alert = UIAlertController(title: "This is the Title", message: "This is the message", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            self.itemArray.append(textfield.text!)
+            self.tableView.reloadData()
+        }
+    
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create new item"
+            textfield = alertTextField
+        }
+        alert.addAction(action)
         
+        present(alert, animated: true, completion: nil)
     }
     
 
