@@ -18,7 +18,10 @@ class MainListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        //Print location where data is stored for the programmer's reference
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         loadItems()
     }
@@ -44,9 +47,14 @@ class MainListViewController: UITableViewController {
     
     //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //For deleting cells, make sure that the itemArray checkmarks are commented first.
+        context.delete(itemArray[indexPath.row])
+        itemArray.remove(at: indexPath.row)
+        
+        
         // Unselect the row, and instead, show the state with a checkmark.
-        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-
+        //itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
