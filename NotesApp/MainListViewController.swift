@@ -19,7 +19,6 @@ class MainListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //Print location where data is stored for the programmer's reference
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
@@ -104,7 +103,6 @@ class MainListViewController: UITableViewController {
     }
     
     func loadItems(){
-        
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         do{
             //Returns an NSFetchqRequest which is an array of "Items"
@@ -112,7 +110,7 @@ class MainListViewController: UITableViewController {
         }
         catch{
         }
-        
+        tableView.reloadData()
     }
     
 
@@ -136,6 +134,37 @@ class MainListViewController: UITableViewController {
 //        tableView.reloadData()
 //    }
     
+}
+
+extension MainListViewController: UISearchBarDelegate{
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request:NSFetchRequest<Item> = Item.fetchRequest()
+        // Make Query
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        request.predicate = predicate
+        
+        //Sort query to ascending
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
+        //Basic load data using Coredata
+        do{
+            itemArray = try context.fetch(request)
+        } catch{
+            print("Error fetching search request")
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
     
     
 }
