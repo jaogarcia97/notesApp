@@ -52,13 +52,13 @@ class MainListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //For deleting cells, make sure that the itemArray checkmarks are commented first.
-        /*
+        
         context.delete(itemArray[indexPath.row])
         itemArray.remove(at: indexPath.row)
-        */
+        
         
         // Unselect the row, and instead, show the state with a checkmark.
-        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        //itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -105,7 +105,12 @@ class MainListViewController: UITableViewController {
     }
     
     func loadItems(){
+        //Filter the item loading only according to the parent category
         let request : NSFetchRequest<Item> = Item.fetchRequest()
+        
+        let predicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        request.predicate = predicate
+        
         do{
             //Returns an NSFetchqRequest which is an array of "Items"
             itemArray = try context.fetch(request)
@@ -167,7 +172,5 @@ extension MainListViewController: UISearchBarDelegate{
             }
         }
     }
-    
-    
 }
 
