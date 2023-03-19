@@ -12,7 +12,7 @@ class MainListViewController: UITableViewController {
 
     var itemArray = [Item]()
 
-    let defaults = UserDefaults.standard
+    //let defaults = UserDefaults.standard
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -33,11 +33,8 @@ class MainListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let mainCell = tableView.dequeueReusableCell(withIdentifier: "mainListCell", for: indexPath)
-        
         let item = itemArray[indexPath.row]
-    
         mainCell.textLabel?.text = item.title
-        
         //Save Array to plist (Local Storage)
         mainCell.accessoryType = item.done ? .checkmark : .none
         
@@ -74,17 +71,13 @@ class MainListViewController: UITableViewController {
             self.itemArray.append(newItem)
             self.tableView.reloadData()
             self.saveItems()
-            
         }
-
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
             textfield = alertTextField
         }
         alert.addAction(action)
-        
-        
         present(alert, animated: true, completion: nil)
     }
     

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main List View Controller-->
+        <!--Items-->
         <scene sceneID="s0x-Be-MLW">
             <objects>
                 <tableViewController id="nfN-dO-QVW" customClass="MainListViewController" customModule="NotesApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <outlet property="delegate" destination="nfN-dO-QVW" id="KyX-kz-IJb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zq1-Sy-sQs">
+                    <navigationItem key="navigationItem" title="Items" id="Zq1-Sy-sQs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jdo-js-IhO">
                             <connections>
                                 <action selector="addItemToMainList:" destination="nfN-dO-QVW" id="rXB-Hb-ag8"/>
@@ -48,7 +48,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5T-ma-5po" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728.985507246377" y="87.723214285714278"/>
+            <point key="canvasLocation" x="2000" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oa0-jY-OP8">
@@ -61,12 +61,50 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nfN-dO-QVW" kind="relationship" relationship="rootViewController" id="cIM-hM-mqn"/>
+                        <segue destination="R1R-yX-buU" kind="relationship" relationship="rootViewController" id="ZYq-Ob-oaC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MF-k8-KxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818.84057971014499" y="87.723214285714278"/>
+            <point key="canvasLocation" x="410" y="82"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="up6-PM-oRv">
+            <objects>
+                <tableViewController id="R1R-yX-buU" customClass="CategoryViewController" customModule="NotesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1G2-Ec-D1V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="Q43-Y5-Ov5">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q43-Y5-Ov5" id="4mv-MB-qsl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="R1R-yX-buU" id="sHE-Dm-pvg"/>
+                            <outlet property="delegate" destination="R1R-yX-buU" id="q2a-ns-DJn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Categories" id="p4m-db-U1O">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nma-aq-WLh">
+                            <connections>
+                                <action selector="addCategory:" destination="R1R-yX-buU" id="SG9-5e-cI8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="nfN-dO-QVW" kind="show" identifier="categoryToItems" id="waN-fO-ngd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBU-Xj-NH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184" y="82"/>
         </scene>
     </scenes>
     <resources>

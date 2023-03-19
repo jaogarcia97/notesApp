@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21705BA29C6300B0090C85B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21705B929C6300B0090C85B /* CategoryViewController.swift */; };
 		B258FD3129C327980023AAAB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B258FD2F29C327980023AAAB /* DataModel.xcdatamodeld */; };
 		B2E4F6B429BF160600057308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4F6B329BF160600057308 /* AppDelegate.swift */; };
 		B2E4F6B629BF160600057308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4F6B529BF160600057308 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B21705B929C6300B0090C85B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		B258FD3029C327980023AAAB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		B2E4F6B029BF160600057308 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E4F6B329BF160600057308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B21705BB29C631E10090C85B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B21705B929C6300B0090C85B /* CategoryViewController.swift */,
+				B2E4F6B729BF160600057308 /* MainListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B258FD3229C327CE0023AAAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,9 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				B2E4F6B329BF160600057308 /* AppDelegate.swift */,
+				B21705BB29C631E10090C85B /* Controllers */,
 				B258FD3229C327CE0023AAAB /* Model */,
 				B2E4F6B529BF160600057308 /* SceneDelegate.swift */,
-				B2E4F6B729BF160600057308 /* MainListViewController.swift */,
 				B2E4F6B929BF160600057308 /* Main.storyboard */,
 				B2E4F6BC29BF160700057308 /* Assets.xcassets */,
 				B2E4F6BE29BF160700057308 /* LaunchScreen.storyboard */,
@@ -148,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21705BA29C6300B0090C85B /* CategoryViewController.swift in Sources */,
 				B2E4F6B829BF160600057308 /* MainListViewController.swift in Sources */,
 				B258FD3129C327980023AAAB /* DataModel.xcdatamodeld in Sources */,
 				B2E4F6B429BF160600057308 /* AppDelegate.swift in Sources */,
