@@ -44,7 +44,7 @@ class CategoryViewController: UITableViewController {
         } catch {
             print("Error saving context \(error)")
         }
-    
+        tableView.reloadData()
     }
         
     //Load using COREDATA
@@ -88,10 +88,20 @@ class CategoryViewController: UITableViewController {
     }
     
     //MARK: - Table view Delegate Methods
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "categoryToItems", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Set reference to desired destination
+        let destinationVC = segue.destination as! MainListViewController
+        //Get the index of the current row
+        if let indexOfCategorySelected = tableView.indexPathForSelectedRow{
+            //Pass the index to a variable(property) in destination controller (MainListViewController)
+            destinationVC.selectedCategory = categoryArray[indexOfCategorySelected.row]
+        }
+        //Use that index to specify what category you are going to pass to the next view controller
+    }
     
     //MARK: - Data manipulation methods
 

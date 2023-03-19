@@ -100,5 +100,128 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NotesApp/Controllers/MainListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "selectedCategory"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - 6f4b11c4056c374d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.selectedCategory.getter : Swift.Optional&lt;NotesApp.Category&gt;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - 266289f43f12c359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.selectedCategory.setter : Swift.Optional&lt;NotesApp.Category&gt;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - 4d4fc2bf926fa858"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.selectedCategory.modify : Swift.Optional&lt;NotesApp.Category&gt;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - 744f7b6b6dafa85b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.selectedCategory.modify : Swift.Optional&lt;NotesApp.Category&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - ada3a2674c74815d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.init(style: __C.UITableViewStyle) -&gt; NotesApp.MainListViewController"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "191">
+               </Location>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - 6fddf071edf91fe7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; NotesApp.MainListViewController"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "C36A9AAB-0BE7-4851-99AC-53E48C238EA8 - 3fcb4fdb640f2ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.MainListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;NotesApp.MainListViewController&gt;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookretina/Documents/iOS%20Development/Portfolio%20Trainings/Notes%20App%20-%20Local%20Data%20Management/NotesApp/NotesApp/Controllers/MainListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "191">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

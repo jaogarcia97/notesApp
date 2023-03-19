@@ -11,6 +11,13 @@ import CoreData
 class MainListViewController: UITableViewController {
 
     var itemArray = [Item]()
+    
+    //The property that would catch the index of the selected category in the initial tableview (CategoryViewController)
+    var selectedCategory:Category?{
+        didSet{
+            loadItems()
+        }
+    }
 
     //let defaults = UserDefaults.standard
     
@@ -22,7 +29,7 @@ class MainListViewController: UITableViewController {
         //Print location where data is stored for the programmer's reference
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
-        loadItems()
+        //loadItems()
     }
 
     //MARK:- TableView Data Source Methods
@@ -45,12 +52,13 @@ class MainListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //For deleting cells, make sure that the itemArray checkmarks are commented first.
+        /*
         context.delete(itemArray[indexPath.row])
         itemArray.remove(at: indexPath.row)
-        
+        */
         
         // Unselect the row, and instead, show the state with a checkmark.
-        //itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -67,6 +75,7 @@ class MainListViewController: UITableViewController {
             let newItem = Item(context: self.context)
             newItem.title = textfield.text!
             newItem.done = false
+            newItem.parentCategory = self.selectedCategory
         
             self.itemArray.append(newItem)
             self.tableView.reloadData()
